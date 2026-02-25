@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: second-flower-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m bot.main
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: DATABASE_PATH
+        value: data/bot.db
